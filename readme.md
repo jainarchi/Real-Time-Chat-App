@@ -37,15 +37,36 @@ The application is fully deployed and tested in a live production environment.
 
 ## 📂 Project Structure
 Real-Time-Chat-App/
-├── Client/ # React frontend
-│ ├── src/
-│ └── package.json
 │
-├── Server/ # Node.js backend
-│ ├── server.js
-│ └── package.json
+├── Client/                     # Frontend (React)
+│   ├── public/
+│   │   └── index.html
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── join-room/
+│   │   │   │   ├── JoinRoom.jsx
+│   │   │   │   └── JoinRoom.css
+│   │   │   │
+│   │   │   └── chat/
+│   │   │       ├── Chat.jsx
+│   │   │       └── chat.css
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
+├── Server/                     # Backend (Node + Socket.IO)
+│   ├── server.js
+│   ├── package.json
+│   └── node_modules/
+│
+├── .gitignore
 └── README.md
+
 
 
 
