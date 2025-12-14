@@ -36,6 +36,8 @@ The application is fully deployed and tested in a live production environment.
 ---
 
 ## 📂 Project Structure
+📂 Project Structure
+
 Real-Time-Chat-App/
 │
 ├── Client/                     # Frontend (React)
@@ -66,7 +68,6 @@ Real-Time-Chat-App/
 │
 ├── .gitignore
 └── README.md
-
 
 
 
