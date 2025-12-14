@@ -1,5 +1,8 @@
 import "./JoinRoom.css";
 import { useState } from "react";
+import Chat from '../chat/Chat'
+
+
 
 const JoinRoom = ({socket}) => {
  
@@ -16,6 +19,8 @@ const JoinRoom = ({socket}) => {
 
 
   return (
+   <>
+
     <div className="fullscreen">
     <div className="join-room">
       <h2>Join Room</h2>
@@ -25,6 +30,9 @@ const JoinRoom = ({socket}) => {
     </div>
 
     </div>
+
+    <Chat socket={socket} username={username} room ={room}/>
+   </>
   );
 };
 

@@ -31,6 +31,11 @@ io.on("connection" , (socket) =>{
         console.log("User Disconnected.." , socket.id);
         
     })
+
+    socket.on("send_message" , (data) => {
+        console.log("send messag data" , data);
+        
+    })
     
 } )
 
