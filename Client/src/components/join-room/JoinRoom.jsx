@@ -8,11 +8,13 @@ const JoinRoom = ({socket}) => {
  
   const [username, setUsername] = useState("")
   const [room, setRoom] = useState("")
+  const [showChat, setshowChat] = useState(false)
 
   
   const joinChat = ()=>{
     if(username !== "" && room !== ""){
-      socket.emit("join_room" , room)
+      socket.emit("join_room" , room);
+      setshowChat(true)
 
     }
   }
@@ -20,8 +22,11 @@ const JoinRoom = ({socket}) => {
 
   return (
    <>
+  
 
-    <div className="fullscreen">
+   { !showChat && (
+
+     <div className="fullscreen">
     <div className="join-room">
       <h2>Join Room</h2>
        <input type="text" placeholder="Name" onChange={(e) => setUsername(e.target.value)} />
@@ -30,8 +35,16 @@ const JoinRoom = ({socket}) => {
     </div>
 
     </div>
+   )}
+   
 
-    <Chat socket={socket} username={username} room ={room}/>
+   {
+    showChat && (
+      <Chat socket={socket} username={username} room ={room}/>   
+    )
+   }
+
+   
    </>
   );
 };

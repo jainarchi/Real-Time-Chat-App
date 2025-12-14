@@ -1,79 +1,121 @@
+
+
+
 .chat_container{
-  height: 600px;
-  width: 400px;
+  height: 100vh;
+  max-width: 600px;
   margin: auto;
   text-align: center;
-  /* background-color: yellow; */
-}
-
-.chat_box{
-  background-color: rgb(80, 80, 66);
-  height: 500px;
-  position: relative;
-  border: 1px solid yellow;
-}
-
-.chat_body{
-  position: absolute;
-  bottom: 0;
-}
-
-.chat_body input{
-  height: 40px;
-  width: 350px;
-  border: 1px solid yellow;
-}
-
-.chat_body input::placeholder{
-  font-size: 1rem;
-  font-weight: bolder;
-  padding: 5px;
-}
-
-.chat_body button{
-  height: 46px;
-  padding: 10px;
-  width: 42px;
-  background-color: rgb(127, 19, 229);
-  color: white;
-}
-
-.message_content{
+ background: linear-gradient(rgb(242, 240, 254), rgb(187, 187, 249));
   display: flex;
-  line-height: 0;
-  margin: 10px;
-  font-weight: bolder;
+  flex-direction: column;
+ 
+}
+
+
+h2{
+  color: #531d7e;
+  font-weight: 500;
+}
+.chat_box {
+  flex: 1;
+  
+  padding: 12px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+
+.chat_box::-webkit-scrollbar {
+  display: none;
+}
+
+/* Input area */
+.chat_body {
+  display: flex;
+  padding: 10px;
+  background-color: #1f023d;
+  border-top: 1px solid #ddd;
+  gap: 8px;
+  width: 100%;
+ 
+}
+
+.chat_body input {
+  flex: 1;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat_body input:focus {
+  border-color: #667eea;
+}
+
+.chat_body button {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: #667eea;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.3s ease;
+}
+
+.chat_body button:hover {
+  background-color: #5a67d8;
+  transform: scale(1.02);
+}
+
+
+
+
+.message_content {
+  display: flex;
+  margin: 6px 0;
+  animation: fadeIn 0.2s ease-in;
 }
 
  #you{
+  justify-content: flex-end;
+}
+
+ #other{
   justify-content: flex-start;
 }
+
+
 #y{
-  background-color: yellow;
+  background-color: rgb(222, 222, 239);
   padding: 10px;
-  border-radius: 5%;
+  border-radius: 4px ;
   color: black;
 }
 
-
-
-
-/* 
- #other{
-  justify-content: flex-end;
-}
 #b{
-  background-color: blue;
+ 
+  background-color: rgb(198, 195, 255);
+  color: black;
   padding: 10px;
-  border-radius: 5%;
+  border-radius: 4px ;
 }
-.msg_detail{
+
+.msg_detail {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-top: 2px;
+  color: #666;
+  text-align: center;
 }
+
 
 .auto-scrolling-div::-webkit-scrollbar{
   display: none;
-} */
+}
