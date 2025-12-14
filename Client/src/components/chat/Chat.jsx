@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import "./chat.css"
+import "./Chat.css"
 
 
 
