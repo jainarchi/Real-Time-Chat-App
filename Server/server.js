@@ -5,14 +5,14 @@ import http from 'http'
 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 
 const io = new Server(server , {
     cors:{
-        origin: "http://localhost:5173",
-        methods: ["GET" , "PUT"]
+        origin: "*",
+        methods: ["GET" , "POST"]
     }
 })
 
