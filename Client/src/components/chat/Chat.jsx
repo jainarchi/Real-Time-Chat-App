@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react"
 import "./Chat.css"
 
 
-
 const Chat = ({ socket, username, room }) => {
     const [currentMessage, setcurrentMessage] = useState("")
     const [messageList, setmessageList] = useState([])
@@ -12,7 +11,7 @@ const Chat = ({ socket, username, room }) => {
     useEffect(() => {
         const handleReceiveMsg = (data) => {
             setmessageList((list) => [...list, data]);
-        };
+        }
         socket.on("receive_message", handleReceiveMsg);
 
         return () => {
@@ -38,10 +37,10 @@ const Chat = ({ socket, username, room }) => {
                 author: username,
                 message: currentMessage,
                 time: new Date(Date.now()).getHours() % 24 + ':' + new Date(Date.now()).getMinutes()
-
             }
 
             await socket.emit("send_message", messageData)
+
             setmessageList((list) => [...list, messageData])
             setcurrentMessage("");
         }
@@ -64,7 +63,6 @@ const Chat = ({ socket, username, room }) => {
                         style={{
                             height: "100%",
                             overflowY: "auto",
-                            // border: "2px solid red",
                         }}
                     >
 

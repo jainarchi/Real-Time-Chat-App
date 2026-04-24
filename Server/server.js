@@ -39,12 +39,12 @@ io.on("connection" , (socket) =>{
     
 } )
 
+
+
 app.use(cors());
+
 
 server.listen(port , ()=>{
     console.log(`server listen on port ${port}`);
     
 })
-
-
-//
