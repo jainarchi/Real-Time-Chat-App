@@ -16,6 +16,7 @@
 h2{
   color: #531d7e;
   font-weight: 500;
+  font-size: 1.3rem;
 }
 .chat_box {
   flex: 1;

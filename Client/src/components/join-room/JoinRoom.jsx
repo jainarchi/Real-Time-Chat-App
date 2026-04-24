@@ -12,11 +12,14 @@ const JoinRoom = ({socket}) => {
 
   
   const joinChat = ()=>{
-    if(username !== "" && room !== ""){
+      if (username.trim() === "" || room.trim() === "") {
+      alert("Please enter both username and room ID");
+      return;
+    }
       socket.emit("join_room" , room);
       setshowChat(true)
 
-    }
+    
   }
 
 
@@ -28,7 +31,9 @@ const JoinRoom = ({socket}) => {
 
      <div className="fullscreen">
     <div className="join-room">
-      <h2>Join Room</h2>
+      <h1>SyncChat</h1>
+      <h2>Join or Create a Chat Room</h2>
+      <p>Enter your name and room ID to start chatting instantly</p>
        <input type="text" placeholder="Name" onChange={(e) => setUsername(e.target.value)} />
       <input type="text" placeholder="Room ID" onChange={(e) => setRoom(e.target.value)} />
       <button onClick={joinChat}>Join</button>
